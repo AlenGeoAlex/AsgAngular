@@ -11,9 +11,9 @@ import {RouterModule} from "@angular/router";
     exports: [
         NavbarComponent
     ],
-  imports:[
-    RouterModule
-  ]
+    imports:[
+      RouterModule
+    ]
 
 })
 export class CommonComponentModule { }

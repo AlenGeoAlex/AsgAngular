@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterModule, RouterStateSnapshot, UrlTree} from '@angular/router';
 import { Observable } from 'rxjs';
 import {AuthService} from "./services/auth.service";
 
@@ -8,15 +8,23 @@ import {AuthService} from "./services/auth.service";
 })
 export class AccessGuardGuard implements CanActivate {
 
-  constructor(private readonly service: AuthService) {
+  constructor(private readonly service: AuthService, private readonly router: Router) {
 
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if(!this.service.getCred()){
+      this.router.navigate([""]);
+      return false;
+    }
 
-    return true;
+    if(!(route.data["role"] === this.service.getCred())){
+      this.router.navigate([""]);
+      return false;
+    }else return true;
+
   }
 
 }

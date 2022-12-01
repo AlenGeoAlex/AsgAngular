@@ -1,3 +1,4 @@
+<!--suppress XmlInvalidId -->
 <div class="min-vh-100" style="position: relative; overflow: hidden">
   <div class="container-fluid">
     <header class="d-flex flex-wrap justify-content-center py-1 border-bottom shadow-sm rounded">
@@ -7,9 +8,34 @@
     </header>
   </div>
 
-  <div class="container-fluid d-flex  test-class" style="position: absolute; height: 100%">
-    <div class="row align-items-center justify-content-center " style="white-space: nowrap">
-      <h1>Hello</h1>
+  <div class="container-fluid d-flex justify-content-center" style="position: absolute; margin-top:-5vh; height: 100%;">
+    <div class="row align-items-center" style="white-space: nowrap">
+      <div class="card rounded shadow-sm" style="width: 30rem; height: 30rem;">
+        <div class="card-body">
+          <div class="row">
+            <h3 class="ms-4 mt-3">Login</h3>
+            <hr style="width: 92%; margin-left: 1.3rem; padding: 2px; margin-top: 0.4rem; color: #18CBFE">
+          </div>
+          <div class="container mt-2" style="margin-top: 20vh">
+            <div class="row ms-5">
+              <span class="" *ngIf="invalid" style="color:red;">Invalid username/password provided</span>
+            </div>
+            <form class="mt-2" [formGroup]="formGroup">
+              <div class="row">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" formControlName="username" class="form-control mx-2" id="username" name="username" placeholder="Enter username">
+              </div>
+              <div class="row ">
+                <label for="password" class="form-label mt-3">Password</label>
+                <input type="password" formControlName="password" class="form-control mx-2" id="password" name="password" placeholder="Enter password">
+              </div>
+              <div class="d-flex justify-content-center">
+                <input type="button" [disabled]="this.formGroup.invalid"  (click)="submit(this.formGroup.getRawValue())" value="Login" class="mt-5 col-4 btn btn-outline-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

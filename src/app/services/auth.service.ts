@@ -32,13 +32,13 @@ export class AuthService {
       case undefined:
         return false;
       case "ADMIN":
-
+        this.router.navigate(["admin"])
         return true;
       case "STAFF":
-
+        this.router.navigate(["staff"])
         return true;
       case "STUDENT":
-
+        this.router.navigate(["student"])
         return true;
       default:
     }
