@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="post">
+  <div class="container mt-5">
+    <div class="row mb-4">
+      <div class="col">
+        <h1>Api Posts</h1>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">User</th>
+          <th scope="col">Title</th>
+          <th scope="col">Post</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let each of post">
+          <tr>
+            <th scope="row">{{each.id}}</th>
+            <td>{{each.userId}}</td>
+            <td>{{each.title}}</td>
+            <td>{{each.body}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>

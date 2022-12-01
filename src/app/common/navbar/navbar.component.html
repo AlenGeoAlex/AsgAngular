@@ -1,0 +1,15 @@
+<div class="container-fluid shadow-sm rounded">
+  <header class="d-flex flex-wrap justify-content-center py-1 border-bottom">
+    <a [routerLink]="['/guest']" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <img src="assets/brand-logo.png" alt="" height="50">
+    </a>
+
+    <ul class="nav align-items-center justify-content-between nav-pills">
+      <li class="nav-item btn-outline-light"><a [routerLink]="['/guest']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"><i class="fa fa-home"></i> Home</a></li>
+      <li class="nav-item btn-outline-light"><a [routerLink]="['/guest/gallery']" routerLinkActive="active" class="nav-link"><i class="fa fa-photo me-2"></i>Gallery</a></li>
+      <li class="nav-item btn-outline-light"><a [routerLink]="['/guest/about']" routerLinkActive="active" class="nav-link"><i class="fa fa-book me-2"></i>About</a></li>
+      <li class="nav-item btn-outline-light"><a [routerLink]="['/guest/api-post']" routerLinkActive="active" class="nav-link"><i class="fa fa-newspaper-o me-2"></i>API</a></li>
+      <li class="nav-item btn-outline-info pe-auto ms-5" style="cursor:pointer;"><a [routerLink]="['/login']" class="nav-link"><i class="fa fa-lock me-2" style="cursor:pointer;"></i>Login</a></li>
+    </ul>
+  </header>
+</div>
