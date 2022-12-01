@@ -9,7 +9,6 @@ import { LoginComponent } from './login.component';
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([]),
   ]
 })
 export class AuthModule { }

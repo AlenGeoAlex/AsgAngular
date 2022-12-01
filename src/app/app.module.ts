@@ -7,6 +7,7 @@ import {CommonComponentModule} from "./common/common-component.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule,
     CommonComponentModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
   ],
 
   providers: [],
