@@ -16,12 +16,12 @@ export class AccessGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(!this.service.getCred()){
-      this.router.navigate([""]);
+      this.router.navigate(["guest"]);
       return false;
     }
 
     if(!(route.data["role"] === this.service.getCred())){
-      this.router.navigate([""]);
+      this.router.navigate(["guest"]);
       return false;
     }else return true;
 

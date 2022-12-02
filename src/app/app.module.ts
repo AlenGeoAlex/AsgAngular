@@ -9,6 +9,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthModule} from "./auth/auth.module";
 import {HomeModule} from "./home/home.module";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {HomeModule} from "./home/home.module";
     HomeModule,
   ],
 
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

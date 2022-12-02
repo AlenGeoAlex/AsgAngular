@@ -8,7 +8,7 @@ import {StudentComponent} from "./home/student.component";
 
 const routes: Routes = [
   {
-    path: "", loadChildren: () => import('./guest/guest.module').then(module => module.GuestModule)
+    path: "guest", loadChildren: () => import('./guest/guest.module').then(module => module.GuestModule)
   },
   {
     path: "login", component: LoginComponent
